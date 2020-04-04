@@ -31,6 +31,18 @@ FlutterMethodChannel *_fluwxMethodChannel = nil;
             }];
 }
 
+- (void)handleAuthReq:(FlutterMethodCall *)call result:(FlutterResult)result {
+    NSString *openId = call.arguments[@"openId"];
+
+    [WXApiRequestHandler sendAuthRequestScope:call.arguments[@"scope"]
+                                        State:(call.arguments[@"state"] == (id) [NSNull null]) ? nil : call.arguments[@"state"]
+                                       OpenID:(openId == (id) [NSNull null]) ? nil : openId
+                                       InViewController: self
+                                       completion:^(BOOL done) {
+                result(@(done));
+            }];
+}
+
 - (void)authByQRCode:(FlutterMethodCall *)call result:(FlutterResult)result {
     NSString *appId = call.arguments[@"appId"];
     NSString *scope = call.arguments[@"scope"];

@@ -15,6 +15,8 @@
 
 - (void)handleAuth:(FlutterMethodCall *)call result:(FlutterResult)result;
 
+- (void)handleAuthReq:(FlutterMethodCall *)call result:(FlutterResult)result;
+
 - (void)authByQRCode:(FlutterMethodCall *)call result:(FlutterResult)result;
 
 - (void)stopAuthByQRCode:(FlutterMethodCall *)call result:(FlutterResult)result;

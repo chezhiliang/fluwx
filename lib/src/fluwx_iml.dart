@@ -105,6 +105,13 @@ Future<bool> sendWeChatAuth({@required String scope, String state}) async {
       .invokeMethod("sendAuth", {"scope": scope, "state": state});
 }
 
+///only for ios without installed wechat
+Future<bool> sendWeChatAuthReq({@required String scope, String state}) async {
+  assert(scope != null && scope.trim().isNotEmpty);
+  return await _channel
+      .invokeMethod("sendAuthReq", {"scope": scope, "state": state});
+}
+
 /// open mini-program
 /// see [WXMiniProgramType]
 Future<bool> launchWeChatMiniProgram(

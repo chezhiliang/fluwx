@@ -38,6 +38,8 @@ BOOL handleOpenURLByFluwx = YES;
         [self checkWeChatInstallation:call result:result];
     } else if ([@"sendAuth" isEqualToString:call.method]) {
         [_fluwxAuthHandler handleAuth:call result:result];
+    } else if ([@"sendAuthReq" isEqualToString:call.method]) {
+        [_fluwxAuthHandler handleAuthReq:call result:result];
     } else if ([@"authByQRCode" isEqualToString:call.method]) {
         [_fluwxAuthHandler authByQRCode:call result:result];
     } else if ([@"stopAuthByQRCode" isEqualToString:call.method]) {
