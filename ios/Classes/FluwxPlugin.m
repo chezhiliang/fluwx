@@ -36,6 +36,8 @@ BOOL handleOpenURLByFluwx = YES;
         [self registerApp:call result:result];
     } else if ([@"isWeChatInstalled" isEqualToString:call.method]) {
         [self checkWeChatInstallation:call result:result];
+    } else if ([@"isIPad" isEqualToString:call.method]) {
+        [self checkIsIPad:call result:result];
     } else if ([@"sendAuth" isEqualToString:call.method]) {
         [_fluwxAuthHandler handleAuth:call result:result];
     } else if ([@"sendAuthReq" isEqualToString:call.method]) {

@@ -51,6 +51,10 @@ Future<bool> get isWeChatInstalled async {
   return await _channel.invokeMethod("isWeChatInstalled");
 }
 
+Future<bool> get isIPad async {
+  return await _channel.invokeMethod("isIPad");
+}
+
 ///just open WeChat, noting to do.
 Future<bool> openWeChatApp() async {
   return await _channel.invokeMethod("openWXApp");
