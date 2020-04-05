@@ -33,8 +33,6 @@ FlutterMethodChannel *_fluwxMethodChannel = nil;
 
 - (void)handleAuthReq:(FlutterMethodCall *)call result:(FlutterResult)result {
     NSString *openId = call.arguments[@"openId"];
-
-//    UIViewController *vc = [[UIViewController alloc] init];
     
     FlutterViewController *vc = (FlutterViewController *)UIApplication.sharedApplication.delegate.window.rootViewController;
     

@@ -89,6 +89,10 @@ BOOL handleOpenURLByFluwx = YES;
     result(@([WXApi isWXAppInstalled]));
 }
 
+- (void)checkIsIPad:(FlutterMethodCall *)call result:(FlutterResult)result {
+    result(@([[UIDevice currentDevice].model hasPrefix:@"iPad"]));
+}
+
 - (void)handlePayment:(FlutterMethodCall *)call result:(FlutterResult)result {
 
 
