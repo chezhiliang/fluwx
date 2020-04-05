@@ -34,7 +34,9 @@ FlutterMethodChannel *_fluwxMethodChannel = nil;
 - (void)handleAuthReq:(FlutterMethodCall *)call result:(FlutterResult)result {
     NSString *openId = call.arguments[@"openId"];
 
-    UIViewController *vc = [[UIViewController alloc] init];
+//    UIViewController *vc = [[UIViewController alloc] init];
+    
+    FlutterViewController *vc = (FlutterViewController *)UIApplication.sharedApplication.delegate.window.rootViewController;
     
     [WXApiRequestHandler sendAuthRequestScope:call.arguments[@"scope"]
                                         State:(call.arguments[@"state"] == (id) [NSNull null]) ? nil : call.arguments[@"state"]
